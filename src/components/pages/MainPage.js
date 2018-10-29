@@ -1,8 +1,14 @@
 import React from "react";
 
+import { Container, Row } from 'reactstrap';
+
 const MainPagePage = () => (
-  <div>
-  </div>
+  <Container>
+    <Row>
+    </Row>
+    <Row>
+    </Row>
+  </Container>
 );
 
 export default MainPagePage;
