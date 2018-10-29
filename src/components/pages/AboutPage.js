@@ -14,6 +14,8 @@ const AboutPage = () => (
         <p>This is why Bailemos Helsinki was created: our goal is to aggregate the events and courses happening in the Afro-Latin dance scenes in Helsinki to make it easy to find something that suits you.</p>
         <br />
         <p>This originally started out as a hobby project, but we're encountered way too many people who are getting overwhelmed by all the great dance events out there. So this app will be made public for you all to enjoy.</p>
+        <br />
+        <p>We're not affiliated with any particular dance school or organiser: we're here for the community itself.</p>
       </Row>
     </Container>
   </div>
