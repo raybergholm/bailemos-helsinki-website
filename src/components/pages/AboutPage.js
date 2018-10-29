@@ -1,7 +1,5 @@
 import React from "react";
 
-const linkUrl = "";
-
 const AboutPage = () => (
   <div>
     <h2>Who are we?</h2>
