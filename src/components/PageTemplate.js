@@ -7,9 +7,9 @@ import Footer from "./sections/Footer";
 const Page = ({ children }) => (
   <div>
     <Header />
-    <div className="app-body">
+    <main className="app-body">
       {children}
-    </div>
+    </main>
     <Footer />
   </div>
 );

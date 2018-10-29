@@ -2,11 +2,23 @@
   text-align: center;
 }
 
+.app-header-banner {
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  vertical-align: middle;
+  line-height: normal;
+}
+
 .app-body {
   height: 100%;
+  text-align: left;
 }
 
 .app-footer {
-  background-color: #DDDDDD;
+  background-color: #dddddd;
   padding: 20px;
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
 }
