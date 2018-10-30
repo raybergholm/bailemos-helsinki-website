@@ -19,7 +19,7 @@ const MainPagePage = () => (
   </Row>
   <Row>
     <li>
-      <a href={APP_PATHS.Blurbs.Messenger}>Facebook Messenger chatbot</a>
+      <a href={APP_PATHS.Plugins.Messenger}>Facebook Messenger chatbot</a>
     </li>
   </Row>
   </Container>

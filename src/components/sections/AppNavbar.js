@@ -12,13 +12,13 @@ const generateSimpleLink = ({ text, url }) => (
   </NavItem>
 );
 
-const generateDropdown = (entries) => (
+const generateDropdown = ({ text, items }) => (
   <UncontrolledDropdown nav inNavbar>
     <DropdownToggle nav caret>
-      Blurbs
+      {text}
     </DropdownToggle>
     <DropdownMenu right>
-      {entries.map((entry) => (
+      {items.map((entry) => (
         <DropdownItem>
           {generateSimpleLink(entry)}
         </DropdownItem>
@@ -27,12 +27,19 @@ const generateDropdown = (entries) => (
   </UncontrolledDropdown>
 );
 
-const AppNavbar = ({ links }) => (
+const AppNavbar = ({ items }) => (
   <Navbar color="light" light>
     <NavbarBrand href={APP_PATHS.Root}>BailemosHelsinki</NavbarBrand>
     <Nav>
-      {links && links.map((entry) => {
-        return entry instanceof Array ? generateDropdown(entry) : generateSimpleLink(entry)
+      {items && items.map(({ type, ...entry }) => {
+        switch (type) {
+          case "link":
+            return generateSimpleLink(entry);
+          case "dropdown":
+            return generateDropdown(entry);
+          default:
+            return null;
+        }
       })}
     </Nav>
   </Navbar>

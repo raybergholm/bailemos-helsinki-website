@@ -3,13 +3,7 @@ import React from "react";
 import Banner from "./Banner";
 import AppNavbar from "./AppNavbar";
 
-import { APP_PATHS } from "../../appConfig";
-
-const links = [
-  { text: "About", url: APP_PATHS.About },
-  { text: "Privacy Policy", url: APP_PATHS.PrivacyPolicy },
-  [{ text: "Facebook Messenger Chatbot", url: APP_PATHS.Blurbs.Messenger }]
-];
+import { NAVBAR_CONFIG } from "../../appConfig";
 
 const Header = () => (
   <header id="app-header" data-sticky-container>
@@ -18,7 +12,7 @@ const Header = () => (
         <span>Bailemos Helsinki</span>
       </Banner>
     </div>
-    <AppNavbar links={links} />
+    <AppNavbar items={NAVBAR_CONFIG} />
   </header>
 );
 
