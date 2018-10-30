@@ -1,15 +1,39 @@
 import React from "react";
 import PropTypes from "prop-types"
 
-import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { Navbar, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+
+import { APP_PATHS } from "../../appConfig";
+
+
+const generateSimpleLink = ({ text, url }) => (
+  <NavItem>
+    <NavLink href={url}>{text}</NavLink>
+  </NavItem>
+);
+
+const generateDropdown = (entries) => (
+  <UncontrolledDropdown nav inNavbar>
+    <DropdownToggle nav caret>
+      Blurbs
+    </DropdownToggle>
+    <DropdownMenu right>
+      {entries.map((entry) => (
+        <DropdownItem>
+          {generateSimpleLink(entry)}
+        </DropdownItem>
+      ))}
+    </DropdownMenu>
+  </UncontrolledDropdown>
+);
 
 const AppNavbar = ({ links }) => (
   <Navbar color="light" light>
-    <NavbarBrand href="/">BailemosHelsinki</NavbarBrand>
+    <NavbarBrand href={APP_PATHS.Root}>BailemosHelsinki</NavbarBrand>
     <Nav>
-      {links && links.map(({ text, url }) => <NavItem>
-        <NavLink href={url}>{text}</NavLink>
-      </NavItem>)}
+      {links && links.map((entry) => {
+        return entry instanceof Array ? generateDropdown(entry) : generateSimpleLink(entry)
+      })}
     </Nav>
   </Navbar>
 );
